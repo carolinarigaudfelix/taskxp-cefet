@@ -23,13 +23,9 @@ class _EditorDeTarefaState extends State<EditorDeTarefa> {
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
-      lastDate: DateTime(2023),
+      lastDate: DateTime(DateTime.now().year + 10),
     );
-    if (dataSelecionada == null) {
-      return dataAnterior;
-    } else {
-      return dataSelecionada;
-    }
+    return dataSelecionada ?? dataAnterior;
   }
 
   late final tituloController = TextEditingController(text: widget.tarefa.titulo);
